@@ -1,4 +1,4 @@
-const mapError = ({ touched, error, ...props }, errorProp = 'errorText') =>
-  touched && error ? { ...props, [errorProp]: error } : props
+const mapError = ({ pristine, touched, error, ...props }, errorProp = 'errorText') =>
+  !pristine && touched && error ? { ...props, [errorProp]: error } : props
 
 export default mapError
